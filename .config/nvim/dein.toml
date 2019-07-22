@@ -1,0 +1,127 @@
+## util
+## [[plugins]]
+## repo = 'dracula/vim'
+## hook_add = '''
+## " colorscheme dracula
+## " source ~/.config/nvim/plugins/color.vim
+## '''
+
+[[plugins]]
+repo = 'scrooloose/nerdcommenter'
+hook_add = '''
+let g:NERDCreateDefaultMappings = 0
+nmap <C-_> <Plug>NERDCommenterToggle
+vmap <C-_> <Plug>NERDCommenterToggle
+'''
+
+[[plugins]]
+repo = 'osyo-manga/vim-anzu'
+hook_add = '''
+nmap n <Plug>(anzu-n-with-echo)
+nmap N <Plug>(anzu-N-with-echo)
+nmap * <Plug>(anzu-star-with-echo)
+nmap # <Plug>(anzu-sharp-with-echo)
+" clear status
+nmap <Esc><Esc> <Plug>(anzu-clear-search-status)
+'''
+
+[[plugins]]
+repo = 'tpope/vim-surround'
+hook_add = '''
+map s <Plug>VSurround
+'''
+
+# [[plugins]]
+# repo     = 'ryanoasis/vim-devicons'
+# hook_add = '''
+# let g:webdevicons_conceal_nerdtree_brackets = 1
+# let g:WebDevIconsNerdTreeAfterGlyphPadding = '  '
+#
+# " dir-icons
+# let g:WebDevIconsUnicodeDecorateFolderNodes = 1
+# let g:DevIconsEnableFoldersOpenClose = 1
+# let g:WebDevIconsUnicodeDecorateFolderNodesDefaultSymbol = ''
+# let g:DevIconsDefaultFolderOpenSymbol = ''
+#
+# " file-icons
+# let g:WebDevIconsUnicodeDecorateFileNodesExtensionSymbols = {}
+# let g:WebDevIconsUnicodeDecorateFileNodesExtensionSymbols['html'] = ''
+# let g:WebDevIconsUnicodeDecorateFileNodesExtensionSymbols['css'] = ''
+# let g:WebDevIconsUnicodeDecorateFileNodesExtensionSymbols['md'] = ''
+# let g:WebDevIconsUnicodeDecorateFileNodesExtensionSymbols['txt'] = ''
+# let g:WebDevIconsUnicodeDecorateFileNodesExtensionSymbols['vue'] = '﵂'
+# '''
+
+[[plugins]]
+repo = 'scrooloose/nerdtree'
+hook_add = '''
+noremap <F4> :<C-u>NERDTreeToggle<CR>
+let g:NERDTreeDirArrows = 1
+let g:NERDTreeWinSize=40
+'''
+
+# [[plugins]]
+# repo = 'tiagofumo/vim-nerdtree-syntax-highlight'
+# hook_add = '''
+# let g:NERDTreeExtensionHighlightColor = {}
+# let g:NERDTreeExtensionHighlightColor['vue'] = "41B883"
+# '''
+
+[[plugins]]
+repo = 'Shougo/defx.nvim'
+hook_add = '''
+source ~/.config/nvim/plugins/defx.vim
+'''
+
+# [[plugins]]
+# repo = 'kristijanhusak/defx-icons'
+# hook_add = '''
+# source ~/.config/nvim/plugins/defx_icon.vim
+# '''
+
+## linter
+[[plugins]]
+repo = 'w0rp/ale'
+hook_add = '''
+source ~/.config/nvim/plugins/ale.vim
+'''
+
+
+## airline
+
+[[plugins]]
+repo = 'vim-airline/vim-airline'
+depends = ['vim-airline-themes']
+hook_add = '''
+let g:airline_powerline_fonts = 1
+let g:airline_theme = 'molokai'
+let g:airline#extensions#virtualenv#enabled = 1
+set laststatus=2
+'''
+
+[[plugins]]
+repo = 'vim-airline/vim-airline-themes'
+
+
+
+## LSP
+
+[[plugins]]
+repo = 'autozimu/LanguageClient-neovim'
+build = 'bash install.sh'
+rev = 'next'
+hook_add = '''
+source ~/.config/nvim/plugins/lcs.vim
+'''
+
+## indent
+
+[[plugins]]
+repo = 'nathanaelkane/vim-indent-guides'
+hook_add = '''
+let g:indent_guides_enable_on_vim_startup = 1
+let g:indent_guides_auto_colors = 0
+let g:indent_guides_guide_size = 1
+autocmd VimEnter,Colorscheme * :hi IndentGuidesOdd guifg=#440000 guibg=#660022 ctermbg=234
+autocmd VimEnter,Colorscheme * :hi IndentGuidesEven guifg=#000044 guibg=#220066 ctermbg=238
+'''
