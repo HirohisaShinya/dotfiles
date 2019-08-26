@@ -31,41 +31,47 @@ hook_add = '''
 map s <Plug>VSurround
 '''
 
-# [[plugins]]
-# repo     = 'ryanoasis/vim-devicons'
-# hook_add = '''
-# let g:webdevicons_conceal_nerdtree_brackets = 1
-# let g:WebDevIconsNerdTreeAfterGlyphPadding = '  '
-#
-# " dir-icons
-# let g:WebDevIconsUnicodeDecorateFolderNodes = 1
-# let g:DevIconsEnableFoldersOpenClose = 1
-# let g:WebDevIconsUnicodeDecorateFolderNodesDefaultSymbol = ''
-# let g:DevIconsDefaultFolderOpenSymbol = ''
-#
-# " file-icons
-# let g:WebDevIconsUnicodeDecorateFileNodesExtensionSymbols = {}
-# let g:WebDevIconsUnicodeDecorateFileNodesExtensionSymbols['html'] = ''
-# let g:WebDevIconsUnicodeDecorateFileNodesExtensionSymbols['css'] = ''
-# let g:WebDevIconsUnicodeDecorateFileNodesExtensionSymbols['md'] = ''
-# let g:WebDevIconsUnicodeDecorateFileNodesExtensionSymbols['txt'] = ''
-# let g:WebDevIconsUnicodeDecorateFileNodesExtensionSymbols['vue'] = '﵂'
-# '''
+[[plugins]]
+repo     = 'ryanoasis/vim-devicons'
+hook_add = '''
+let g:webdevicons_conceal_nerdtree_brackets = 1
+let g:WebDevIconsNerdTreeAfterGlyphPadding = '  '
+
+" dir-icons
+let g:WebDevIconsUnicodeDecorateFolderNodes = 1
+let g:DevIconsEnableFoldersOpenClose = 1
+let g:WebDevIconsUnicodeDecorateFolderNodesDefaultSymbol = ''
+let g:DevIconsDefaultFolderOpenSymbol = ''
+
+" file-icons
+let g:WebDevIconsUnicodeDecorateFileNodesExtensionSymbols = {}
+let g:WebDevIconsUnicodeDecorateFileNodesExtensionSymbols['html'] = ''
+let g:WebDevIconsUnicodeDecorateFileNodesExtensionSymbols['css'] = ''
+let g:WebDevIconsUnicodeDecorateFileNodesExtensionSymbols['md'] = ''
+let g:WebDevIconsUnicodeDecorateFileNodesExtensionSymbols['txt'] = ''
+let g:WebDevIconsUnicodeDecorateFileNodesExtensionSymbols['vue'] = '﵂'
+'''
 
 [[plugins]]
 repo = 'scrooloose/nerdtree'
 hook_add = '''
 noremap <F4> :<C-u>NERDTreeToggle<CR>
-let g:NERDTreeDirArrows = 1
 let g:NERDTreeWinSize=40
+let g:NERDTreeIgnore=['\.DS_Store$']
+let g:NERDTreeDirArrowExpandable=" "
+let g:NERDTreeDirArrowCollapsible=" "
 '''
 
-# [[plugins]]
-# repo = 'tiagofumo/vim-nerdtree-syntax-highlight'
-# hook_add = '''
-# let g:NERDTreeExtensionHighlightColor = {}
-# let g:NERDTreeExtensionHighlightColor['vue'] = "41B883"
-# '''
+[[plugins]]
+repo = 'tiagofumo/vim-nerdtree-syntax-highlight'
+hook_add = '''
+let g:NERDTreeExtensionHighlightColor = {}
+let g:NERDTreeExtensionHighlightColor['vue'] = '41B883'
+let g:NERDTreeExactMatchHighlightColor = {}
+let g:NERDTreeExactMatchHighlightColor['.gitignore'] = 'F54D27'
+let g:NERDTreePatternMatchHighlightColor = {}
+let g:NERDTreePatternMatchHighlightColor['.*.spec\.ts'] = 'FE405F'
+'''
 
 [[plugins]]
 repo = 'Shougo/defx.nvim'
@@ -124,4 +130,14 @@ let g:indent_guides_auto_colors = 0
 let g:indent_guides_guide_size = 1
 autocmd VimEnter,Colorscheme * :hi IndentGuidesOdd guifg=#440000 guibg=#660022 ctermbg=234
 autocmd VimEnter,Colorscheme * :hi IndentGuidesEven guifg=#000044 guibg=#220066 ctermbg=238
+'''
+
+
+## diff
+
+[[plugins]]
+repo = 'vim-scripts/BlockDiff'
+hook_add = '''
+vmap <C-b>a :BlockDiff1
+vmap <C-b>b :BlockDiff2
 '''

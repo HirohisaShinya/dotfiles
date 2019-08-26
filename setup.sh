@@ -8,6 +8,8 @@ brew upgrade
 
 formulas=(
   git
+  zsh
+  zsh-completions
   wget
   curl
   cmake
@@ -22,6 +24,11 @@ formulas=(
   python-configparser
   fzf
   hub
+  fontforge
+  boost
+  pyenv
+  nodenv
+  zlib
 )
 
 echo "start brew install apps..."
@@ -49,9 +56,20 @@ done
 brew cleanup
 brew cask cleanup
 
+setopt EXTENDED_GLOB
+for rcfile in "${ZDOTDIR:-$HOME}"/.zprezto/runcoms/^README.md(.N); do
+  ln -s "$rcfile" "${ZDOTDIR:-$HOME}/.${rcfile:t}"
+done
+
+chsh -s /usr/local/bin/zsh
+
 echo "start link dotfiles..."
 
 DOT_FILES=(.zshrc .tmux.conf .config/nvim/ .config/karabiner/karabiner.json)
+
+mkdir ~/.config/
+mkdir ~/.config/karabiner
+
 
 for file in ${DOT_FILES[@]}
 do
