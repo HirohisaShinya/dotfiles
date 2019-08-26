@@ -18,11 +18,13 @@ formulas=(
   ansible
   nfk
   neovim
+  fontforge
   zlib
   reattach-to-user-namespace
   tmux
   python-configparser
   fzf
+  zsh
   hub
   fontforge
   boost
@@ -41,6 +43,7 @@ casks=(
   google-chrome
   google-japanese-ime
   slack
+  source-tree
   vs-code
   iterm2
   karabiner-elements
@@ -75,5 +78,12 @@ for file in ${DOT_FILES[@]}
 do
     ln -s $HOME/dotfiles/$file $HOME/$file
 done
+
+chsh -s /usr/local/bin/zsh
+pip3 install neovim
+nodenv install 10.16.0
+
+defaults write com.apple.finder AppleShowAllFiles TRUE
+killall Finder
 
 echo "finish.."
