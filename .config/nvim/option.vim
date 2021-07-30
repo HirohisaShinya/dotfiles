@@ -11,7 +11,7 @@ set whichwrap=b,s,h,l,<,>,[,]
 set showbreak=++
 set termguicolors
 set scrolloff=5
-
+set pumblend=20
 
 set modifiable
 set write

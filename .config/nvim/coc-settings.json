@@ -1,0 +1,11 @@
+{
+  "suggest.noselect": true,
+  "suggest.preferCompleteThanJumpPlaceholder": true,
+  "coc.preferences.formatOnSaveFiletypes": [
+    "css",
+    "markdown",
+    "typescript",
+    "typescriptreact"
+  ],
+  "eslint.autoFixOnSave": true
+}
