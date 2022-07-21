@@ -21,6 +21,10 @@ set iminsert=0 imsearch=0
 set noimcmdline
 set noswapfile
 
+autocmd BufWritePost * sleep 1
+autocmd BufWritePost * checktime
+set autoread
+
 set cursorline " カーソル行をハイライト
 " カレントウィンドウにのみ罫線を引く
 augroup cch

@@ -7,4 +7,3 @@ select-pane -R
 resize-pane -L 60
 
 send-keys 'nvim' C-m
-

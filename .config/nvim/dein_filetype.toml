@@ -10,8 +10,16 @@ let g:javascript_plugin_flow = 1
 '''
 
 [[plugins]]
+repo = 'peitalin/vim-jsx-typescript'
+on_ft = ['typescript.tsx']
+
+[[plugins]]
 repo = 'leafgarland/typescript-vim'
-on_ft = ['typescript']
+on_ft = ['typescript', 'typescriptreact']
+
+[[plugins]]
+repo = 'jxnblk/vim-mdx-js'
+on_ft = ['markdown.mdx']
 
 [[plugins]]
 repo = 'fatih/vim-go'
@@ -49,9 +57,9 @@ on_ft = ['javascript', 'javascript.jsx']
 repo = 'tikhomirov/vim-glsl'
 on_ft = 'glsl'
 
-[[plugins]]
-repo = 'cespare/vim-toml'
-on_ft = 'toml'
+#[[plugins]]
+#repo = 'cespare/vim-toml'
+#on_ft = 'toml'
 
 [[plugins]]
 repo = 'posva/vim-vue'
@@ -84,3 +92,7 @@ endfunction
 [[plugins]]
 repo = 'plasticboy/vim-markdown'
 on_ft = ['md', 'markdown']
+
+[[plugins]]
+repo = 'keith/swift.vim'
+on_ft = ['swift']

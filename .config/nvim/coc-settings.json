@@ -2,10 +2,14 @@
   "suggest.noselect": true,
   "suggest.preferCompleteThanJumpPlaceholder": true,
   "coc.preferences.formatOnSaveFiletypes": [
-    "css",
     "markdown",
-    "typescript",
-    "typescriptreact"
+    "markdown.mdx",
+    "typescriptreact",
+    "javascript",
+    "javascript.jsx",
+    "typescript"
   ],
-  "eslint.autoFixOnSave": true
+  "eslint.autoFixOnSave": true,
+  "explorer.width": 40,
+  "css.validate": false
 }

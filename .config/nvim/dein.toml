@@ -56,7 +56,7 @@ let g:WebDevIconsUnicodeDecorateFileNodesExtensionSymbols['vue'] = '﵂'
 repo = 'scrooloose/nerdtree'
 hook_add = '''
 noremap <F4> :<C-u>NERDTreeToggle<CR>
-let g:NERDTreeWinSize=40
+let g:NERDTreeWinSize=30
 let g:NERDTreeIgnore=['\.DS_Store$']
 let g:NERDTreeDirArrowExpandable=" "
 let g:NERDTreeDirArrowCollapsible=" "
@@ -66,11 +66,11 @@ let g:NERDTreeDirArrowCollapsible=" "
 repo = 'tiagofumo/vim-nerdtree-syntax-highlight'
 hook_add = '''
 let g:NERDTreeExtensionHighlightColor = {}
-let g:NERDTreeExtensionHighlightColor['vue'] = '41B883'
+let g:NERDTreeExtensionHighlightColor["vue"] = "41B883"
 let g:NERDTreeExactMatchHighlightColor = {}
-let g:NERDTreeExactMatchHighlightColor['.gitignore'] = 'F54D27'
+let g:NERDTreeExactMatchHighlightColor[".gitignore"] = "F54D27"
 let g:NERDTreePatternMatchHighlightColor = {}
-let g:NERDTreePatternMatchHighlightColor['.*.spec\.ts'] = 'FE405F'
+let g:NERDTreePatternMatchHighlightColor[".*.spec\.ts"] = "FE405F"
 '''
 
 [[plugins]]
@@ -95,26 +95,26 @@ source ~/.config/nvim/plugins/defx.vim
 [[plugins]]
 repo = 'neoclide/coc.nvim'
 merged = '0'
+rev = 'release'
 build = './install.sh nightly'
 hook_add = '''
 source ~/.config/nvim/plugins/coc.vim
 '''
 
-
 ## airline
+[[plugins]]
+repo = 'vim-airline/vim-airline-themes'
 
 [[plugins]]
 repo = 'vim-airline/vim-airline'
 depends = ['vim-airline-themes']
 hook_add = '''
 let g:airline_powerline_fonts = 1
-let g:airline_theme = 'molokai'
+let g:airline_theme= "deus"
 let g:airline#extensions#virtualenv#enabled = 1
 set laststatus=2
 '''
 
-[[plugins]]
-repo = 'vim-airline/vim-airline-themes'
 
 
 
@@ -140,12 +140,16 @@ autocmd VimEnter,Colorscheme * :hi IndentGuidesOdd guifg=#440000 guibg=#660022 c
 autocmd VimEnter,Colorscheme * :hi IndentGuidesEven guifg=#000044 guibg=#220066 ctermbg=238
 '''
 
+## spel check
+[[plugins]]
+repo = 'kamykn/spelunker.vim'
+hook_add = '''
+set nospell
+'''
 
 ## diff
 
-[[plugins]]
-repo = 'vim-scripts/BlockDiff'
-hook_add = '''
-vmap <C-b>a :BlockDiff1
-vmap <C-b>b :BlockDiff2
-'''
+# [[plugins]]
+# hook_add = '''
+# source ~/.config/nvim/plugins/blockdiff.vim
+# '''

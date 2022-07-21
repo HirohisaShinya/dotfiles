@@ -2,6 +2,15 @@ command! UTF :e ++enc=utf-8
 command! SJIS :e ++enc=sjis
 command! CP932 :e ++enc=cp932
 
+set wildignore+=*.swp
+set wildignore+=*.zip
+set wildignore+=*.pdf
+set wildignore+=*/tmp/*
+set wildignore+=*/node_modules/*
+set wildignore+=*/bower_components/*
+set wildignore+=*/dist/*
+
+command! TODO :lcd %:h | :vimgrep /TODO/j ./**/*.* | :cw
 
 " 連番に置換
 nnoremap <silent> co :ContinuousNumber <C-a><CR>
