@@ -43,3 +43,7 @@ nmap '' vi'
 nmap (( vi(
 nmap {{ vi{
 nmap [[ vi[
+
+nmap yp :let @* = expand('%:p')<CR>
+nmap yh :let @* = expand('%:h')<CR>
+nmap yt :let @* = expand('%:t')<CR>

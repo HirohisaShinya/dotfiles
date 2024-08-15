@@ -1,9 +1,9 @@
 select-pane -t 0
 split-window -h
-select-pane -t 1
+select-pane -t 2
 split-window -v
 
 select-pane -R
-resize-pane -L 60
+resize-pane -R 50
 
 send-keys 'nvim' C-m

@@ -10,7 +10,7 @@ set wildignore+=*/node_modules/*
 set wildignore+=*/bower_components/*
 set wildignore+=*/dist/*
 
-command! TODO :lcd %:h | :vimgrep /TODO/j ./**/*.* | :cw
+command! TODO :lcd %:h | :vimgrep /@todo/j ./**/*.* | :cw
 
 " 連番に置換
 nnoremap <silent> co :ContinuousNumber <C-a><CR>

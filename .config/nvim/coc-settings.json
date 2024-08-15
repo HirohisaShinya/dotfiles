@@ -7,9 +7,11 @@
     "typescriptreact",
     "javascript",
     "javascript.jsx",
-    "typescript"
+    "typescript",
+    "json"
   ],
-  "eslint.autoFixOnSave": true,
+  "eslint.autoFixOnSave": false,
   "explorer.width": 40,
-  "css.validate": false
+  "css.validate": false,
+  "tsserver.trace.server": "verbose"
 }
