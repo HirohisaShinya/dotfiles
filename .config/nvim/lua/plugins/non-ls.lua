@@ -29,20 +29,29 @@ local async_formatting = function(bufnr)
   )
 end
 
+local cspell_config = {
+  config_file_preferred_name = 'cspell.json',
+  cspell_config_dirs = { "~/.config/" }
+}
+
 return {
   'nvimtools/none-ls.nvim',
   dependencies = {
     'nvim-lua/plenary.nvim',
     "nvimtools/none-ls-extras.nvim",
+    "davidmh/cspell.nvim",
   },
   config = function()
     local null_ls = require("null-ls")
+    local cspell = require("cspell")
     local augroup = vim.api.nvim_create_augroup("LspFormatting", {})
     null_ls.setup({
       sources = {
         null_ls.builtins.formatting.stylelint,
         null_ls.builtins.formatting.prettier,
-        require("none-ls.diagnostics.eslint_d")
+        require("none-ls.diagnostics.eslint_d"),
+        cspell.diagnostics.with({ config = cspell_config }),
+        cspell.code_actions.with({ config = cspell_config }),
       },
       debug = false,
       on_attach = function(client, bufnr)

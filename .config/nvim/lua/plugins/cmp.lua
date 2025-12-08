@@ -15,6 +15,10 @@ return {
     { "hrsh7th/cmp-nvim-lua" },
     { 'hrsh7th/cmp-path' },
     { "hrsh7th/cmp-buffer" },
+    {
+      'zbirenbaum/copilot-cmp',
+      config = function() require('copilot_cmp').setup() end,
+    }
   },
   config = function()
     local cmp = require('cmp')

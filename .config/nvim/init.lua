@@ -1,4 +1,4 @@
 require('core/options')
-require('core/keymaps')
 require('core/autocmd')
 require('core/lazyvim')
+require('core/keymaps')

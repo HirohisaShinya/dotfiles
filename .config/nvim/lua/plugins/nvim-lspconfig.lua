@@ -18,12 +18,40 @@ return {
     end
 
     -- TypeScript
-    lspconfig.tsserver.setup {
+    lspconfig.ts_ls.setup({
       capabilities = capabilities,
       on_attach = on_attach,
       single_file_support = false,
       root_dir = lspconfig.util.root_pattern("package.json"),
-    }
+      settings = {
+        typescript = {
+          format = {
+            enable = false,
+          },
+        },
+      },
+      tsserver = {
+        enable = true, -- デフォルトで有効
+        completion = {
+          completeFunctionCalls = true,
+        },
+        -- インレイヒント (Inlay Hints) の設定
+        -- 型ヒント、パラメーターヒントなどを表示
+        -- 注意: これはかなり表示が多くなるので、必要に応じて調整
+        inlayHints = {
+          enabled = "on", -- "on" | "off"
+          parameterNames = "all", -- "none" | "literals" | "all"
+          parameterTypes = "on",
+          variableTypes = "on",
+          functionLikeReturnTypes = "on",
+          propertyDeclarationTypes = "on",
+          enumMemberValues = "on",
+        },
+        autoImportSuggestions = {
+          enabled = true,
+        },
+      },
+    })
 
     lspconfig.eslint.setup({
       on_attach = function(client, bufnr)
